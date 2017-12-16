@@ -74,6 +74,8 @@
     <script>scripts\autoStringCutLocation.gml</script>
     <script>scripts\autoStringCut.gml</script>
     <script>scripts\autoLineBreak.gml</script>
+    <script>scripts\quoteChar.gml</script>
+    <script>scripts\addInventoryItem.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_wall</object>
@@ -91,6 +93,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\rm_office</room>
     <room>rooms\rm_hotelRoom1</room>
     <room>rooms\rm_hallway</room>
     <room>rooms\rm_hallway_top</room>

@@ -31,7 +31,8 @@ requiredItem = -1; //neededitem
 requiredAction = false; //needed additional selection
 destroyOnContact = false;
 requiredDir = 0;
-display = false;
+giveItems = ds_queue_create();
+textQueued = false;
 </string>
           </argument>
         </arguments>
@@ -59,12 +60,19 @@ display = false;
         if (obj_player.facing == requiredDir) {
             if (!displayDialog) {
                 displayDialog = true;
-                var newWords = autoLineBreak(words,120);
+            }
+            if (!textQueued) {
+                print(words);
+                var newWords = words;
                 while (string_length(newWords) &gt; 0) {
                     var loc = autoStringCutLocation(newWords,120);
-                    ds_queue_enqueue(dialogQueue,autoStringCut(newWords,120));
+                    ds_queue_enqueue(dialogQueue,autoStringCut(newWords,loc));
                     newWords = string_copy(newWords,loc+1,string_length(newWords)-loc);
                 }
+                while(ds_queue_size(giveItems) &gt; 0) {
+                    addInventoryItem(ds_queue_dequeue(giveItems));
+                }
+                textQueued = true;
             }
         }
     }

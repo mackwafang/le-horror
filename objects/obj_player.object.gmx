@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>canMove = true;
-moveSpeed = 1;
+moveSpeed = 1; // must be power of 2
 image_speed = 0;
 xPrev = x div global.gridSize;
 yPrev = y div global.gridSize;
@@ -66,7 +66,7 @@ else {
     canMove = true;
 }
 if (canMove) {
-    if (place_snapped(global.gridSize,global.gridSize)) {
+    //if (place_snapped(global.gridSize,global.gridSize)) {
         if ((x div global.gridSize != xPrev) || (y div global.gridSize != yPrev)) {
             mp_grid_clear_cell(global.grid,xPrev,yPrev);
             xPrev = x div global.gridSize;
@@ -74,33 +74,29 @@ if (canMove) {
         }
         speed = 0;
         if (keyboard_check(vk_left)) {
-            if (place_free(x-global.gridSize,y)) {
-                speed = moveSpeed;
-                direction = 180;
+            if (place_free(x-moveSpeed,y)) {
+                hspeed = -moveSpeed;
             }
             facing = 180;
             sprite_index = spr_player_left;
         }
         if (keyboard_check(vk_right)) {
-            if (place_free(x+global.gridSize,y)) {
-                speed = moveSpeed;
-                direction = 0;
+            if (place_free(x+moveSpeed,y)) {
+                hspeed = moveSpeed;
             }
             facing = 0;
             sprite_index = spr_player_right;
         }
         if (keyboard_check(vk_up)) {
-            if (place_free(x,y-global.gridSize)) {
-                speed = moveSpeed;
-                direction = 90;
+            if (place_free(x,y-moveSpeed)) {
+                vspeed = -moveSpeed;
             }
             facing = 90;
             sprite_index = spr_player_up;
         }
         if (keyboard_check(vk_down)) {
-            if (place_free(x,y+global.gridSize-1)) {
-                speed = moveSpeed;
-                direction = 270;
+            if (place_free(x,y+moveSpeed)) {
+                vspeed = moveSpeed;
             }
             facing = 270;
             sprite_index = spr_player_down;
@@ -119,11 +115,11 @@ if (canMove) {
             image_speed = 0;
             image_index = 1;
         }
-    }
+    /*}
     else {
         speed = moveSpeed;
         place_snapped(global.gridSize,global.gridSize);
-    }
+    }*/
 }
 else {
     if (!place_snapped(global.gridSize,global.gridSize)) {

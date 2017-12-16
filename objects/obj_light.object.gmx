@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>lightLevel = 2;
 flicker = false;
-radius = 32;
+radius = 64;
 if (irandom(4) == 0) {
     flicker = true;
 }

@@ -53,25 +53,7 @@ destroyOnContact = false;
             <string>if (!pauseState &amp;&amp; place_meeting(x,y,obj_player)) {
     if (actionRequired) {
         if (destroyOnContact || keyboard_check_pressed(ord("Z"))) { 
-            //place item
-            for (var i = 0; i &lt; inventorySize; i++) {
-                if (inventory[i,inventoryData.item] == "") {
-                    inventory[i,inventoryData.item] = getItem;
-                    inventory[i,inventoryData.quantity] += 1;
-                    instance_destroy();
-                    break;
-                }
-                else if (string_lower(inventory[i,inventoryData.item]) == string_lower(getItem)) {
-                    inventory[i,inventoryData.quantity] += 1;
-                    instance_destroy();
-                    break;
-                }
-            }
-            var int = instance_create(obj_player.x,obj_player.y,obj_interactable);
-            int.words = "You picked up "+string(getItem);
-            int.activeOnContact = true;
-            int.destroyOnContact = true;
-            int.requiredDir = obj_player.facing;
+            addInventoryItem(getItem);
         }
     }
 }
