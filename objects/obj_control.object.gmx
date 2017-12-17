@@ -121,7 +121,7 @@ file_text_close(file);
 currentLocation = roomName[room];
 /**************** EVENTS ****************/
 globalvar event;
-for (var i = 0; i &lt; 20; i++) {
+for (var i = 0; i &lt; 10; i++) {
     event[i] = false;
 }
 /**************** ONSCREEN DIALOG ****************/
@@ -131,6 +131,15 @@ displayDialog = false;
 typerWord = "";
 typer = 0;
 dialogQueue = ds_queue_create();
+/**************** ONSCREEN DECISION ****************/
+globalvar currentDecision, maxDecision, decisionList, isDeciding, displayDecision;
+displayDecision = false;
+isDeciding = false;
+currentDecision = 0;
+maxDecision = 0;
+decisionList = ds_list_create();
+ds_list_add(decisionList,"Yes");
+ds_list_add(decisionList,"No");
 /**************** ROOM TRANSITION ****************/
 globalvar roomTransition, transitionMaxTime, transitionTime;
 roomTransition = false;
@@ -175,6 +184,7 @@ if (instance_exists(obj_player)) {
 if (keyboard_check_pressed(ord("C"))) {
     accessInventory = !accessInventory;
 }
+// TODO: CLEAN THIS MESS
 if (accessInventory) {
     pauseState = true;
     if (keyboard_check_pressed(vk_up)) {
@@ -220,6 +230,22 @@ if (accessInventory) {
         else {
             currentInventoryPage = 0;
         }
+    }
+}
+/**************** DECISION ****************/
+if (pauseState &amp;&amp; isDeciding) {
+    if(keyboard_check_pressed(vk_up)) {currentDecision--;}
+    if(keyboard_check_pressed(vk_down)) {currentDecision++;}
+    currentDecision = currentDecision mod maxDecision;
+    if (keyboard_check_pressed(ord("Z"))) {
+        var decision = ds_list_find_value(decisionList,currentDecision);
+        switch(decision) {
+            default:
+                //fails program, something went wrong
+                show_error("Bogus decision in obj_control",true);
+                break;
+        }
+        ds_list_clear(decisionList);
     }
 }
 /**************** ROOM TRANSITION ****************/
@@ -339,6 +365,8 @@ if (displayDialog) {
     draw_text_ext(32,hp-112,typerWord,48,960);
     draw_set_colour(white);
 }
+/**************** DECISION *****************/
+
 /**************** ROOM TRANSITION *****************/
 if (roomTransition) {
     draw_set_color(0);
