@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_part(spr_door,1,openned,0,16-openned,32,x,y);
+            <string>draw_sprite_part(sprite_index,1,openned,0,16-openned,32,x,y);
 if (locked) {
     draw_sprite(spr_locked_icon,1,x+8,y+16);
 }

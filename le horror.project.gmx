@@ -49,6 +49,7 @@
     <sprite>sprites\spr_player_up</sprite>
     <sprite>sprites\spr_player_down</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_metal_door</sprite>
     <sprite>sprites\spr_blank_inventory_slot</sprite>
     <sprite>sprites\spr_locked_icon</sprite>
     <sprite>sprites\spr_move_rooms</sprite>

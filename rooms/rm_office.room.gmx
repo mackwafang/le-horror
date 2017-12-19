@@ -54,7 +54,7 @@
     <instance objName="obj_door" x="80" y="208" name="inst_F39D169E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="80" y="224" name="inst_A724D866" locked="0" code="" scaleX="1.03225803375244" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_moveRooms" x="80" y="208" name="inst_8B0F2B53" locked="0" code="gotoRoom = room0;&#xA;xto = 272;&#xA;yto = 168;&#xA;gotoFloor = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="32" y="16" name="inst_D410DC58" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="64" y="16" name="inst_D410DC58" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="288" y="16" name="inst_E6785918" locked="0" code="" scaleX="0.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="96" y="128" name="inst_2861A054" locked="0" code="" scaleX="6" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="96" y="144" name="inst_03DD3E97" locked="0" code="" scaleX="0.5" scaleY="2.5" colour="4294967295" rotation="0"/>
@@ -62,6 +62,25 @@
     <instance objName="obj_wall" x="16" y="16" name="inst_3FC4AFC1" locked="0" code="" scaleX="0.5" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="184" y="96" name="inst_013E9A68" locked="0" code="" scaleX="1.03225803375244" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="240" y="96" name="inst_44FC4564" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="48" y="16" name="inst_89CD8068" locked="0" code="sprite_index = spr_metal_door;&#xA;locked = true;&#xA;requiredItem = &quot;Basement key 1&quot;;&#xA;lockedString = &quot;The door to the basement requires multiple keys...I don't know where to find them. Maybe there's a hint to where I&#xA;can find them.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="32" y="16" name="inst_C63BAAD9" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="48" y="0" name="inst_3F2F451B" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="48" y="184" name="inst_755F659D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="80" y="184" name="inst_C1E8D7A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="80" y="136" name="inst_CE572935" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="48" y="136" name="inst_77174873" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="48" y="112" name="inst_951361FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="80" y="112" name="inst_6F9DB9AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="48" y="64" name="inst_33FEA475" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="80" y="64" name="inst_86FEEEEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="136" y="64" name="inst_8082DB60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="136" y="112" name="inst_FA15273B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="184" y="64" name="inst_CCA88F01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="184" y="112" name="inst_D11707BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="232" y="64" name="inst_50B56B8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="232" y="112" name="inst_7F49AED7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="280" y="64" name="inst_70C44686" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light" x="280" y="112" name="inst_307EA8F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_wall_tiles" x="64" y="208" w="16" h="16" xo="48" yo="0" id="10001558" name="inst_2A59D345" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -94,7 +113,6 @@
     <tile bgName="bkg_wall_tiles" x="16" y="48" w="16" h="16" xo="80" yo="32" id="10001611" name="inst_5B963E52" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="16" y="32" w="16" h="16" xo="80" yo="32" id="10001613" name="inst_01712E91" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="16" y="16" w="16" h="16" xo="80" yo="32" id="10001614" name="inst_9FF4199B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_wall_tiles" x="32" y="16" w="32" h="32" xo="0" yo="0" id="10001615" name="inst_742D4088" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="64" y="16" w="32" h="32" xo="0" yo="0" id="10001616" name="inst_C0573BBA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="96" y="16" w="32" h="32" xo="0" yo="0" id="10001617" name="inst_A2BF0646" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="128" y="16" w="32" h="32" xo="0" yo="0" id="10001618" name="inst_C9EB920B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -110,7 +128,6 @@
     <tile bgName="bkg_wall_tiles" x="288" y="48" w="16" h="16" xo="64" yo="32" id="10001641" name="inst_9DBD14BE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="288" y="32" w="16" h="16" xo="64" yo="32" id="10001642" name="inst_B77F01BD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="288" y="16" w="16" h="16" xo="64" yo="32" id="10001643" name="inst_19DA8517" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_wall_tiles" x="32" y="0" w="16" h="16" xo="48" yo="48" id="10001646" name="inst_F392FD8C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="48" y="0" w="16" h="16" xo="48" yo="48" id="10001647" name="inst_DC0211EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="64" y="0" w="16" h="16" xo="48" yo="48" id="10001648" name="inst_198C0CE5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_wall_tiles" x="80" y="0" w="16" h="16" xo="48" yo="48" id="10001649" name="inst_20DEA444" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -173,9 +190,11 @@
     <tile bgName="bkg_misc" x="176" y="96" w="16" h="16" xo="32" yo="16" id="10001710" name="inst_FDBB1B6B" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_misc" x="176" y="104" w="16" h="16" xo="32" yo="16" id="10001711" name="inst_99513BFF" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_misc" x="64" y="24" w="32" h="16" xo="32" yo="96" id="10001718" name="inst_96792DDA" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_misc" x="32" y="24" w="32" h="16" xo="32" yo="96" id="10001719" name="inst_17691185" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_misc" x="224" y="24" w="32" h="32" xo="0" yo="32" id="10001748" name="inst_ADEF054F" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_misc" x="256" y="24" w="32" h="32" xo="0" yo="32" id="10001750" name="inst_A15239ED" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_wall_tiles" x="32" y="0" w="16" h="16" xo="48" yo="48" id="10001751" name="inst_A63B4FE7" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_wall_tiles" x="32" y="16" w="16" h="32" xo="0" yo="0" id="10001753" name="inst_606C062E" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_floor_tile" x="48" y="32" w="16" h="16" xo="0" yo="16" id="10001754" name="inst_783E0DCF" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

@@ -29,10 +29,12 @@
 activeOnContact = false;
 requiredItem = -1; //neededitem
 requiredAction = false; //needed additional selection
+destroyOnActive = false;
 destroyOnContact = false;
 requiredDir = 0;
 giveItems = ds_queue_create();
 textQueued = false;
+useDecision = false;
 </string>
           </argument>
         </arguments>
@@ -56,27 +58,32 @@ textQueued = false;
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x,y,obj_player)) {
-    if (activeOnContact || keyboard_check_pressed(ord("Z"))) {
-        if (obj_player.facing == requiredDir) {
-            if (!displayDialog) {
-                displayDialog = true;
-            }
-            if (!textQueued) {
-                print(words);
-                var newWords = words;
-                while (string_length(newWords) &gt; 0) {
-                    var loc = autoStringCutLocation(newWords,120);
-                    ds_queue_enqueue(dialogQueue,autoStringCut(newWords,loc));
-                    newWords = string_copy(newWords,loc+1,string_length(newWords)-loc);
+    if (!pauseState) {
+        if (activeOnContact || keyboard_check_pressed(ord("Z"))) {
+            haveDecision = useDecision;
+            if (obj_player.facing == requiredDir) {
+                if (!displayDialog) {
+                    displayDialog = true;
                 }
-                while(ds_queue_size(giveItems) &gt; 0) {
-                    addInventoryItem(ds_queue_dequeue(giveItems));
+                if (!textQueued) {
+                    var newWords = words;
+                    while (string_length(newWords) &gt; 0) {
+                        var loc = autoStringCutLocation(newWords,120);
+                        ds_queue_enqueue(dialogQueue,autoStringCut(newWords,120));
+                        newWords = string_copy(newWords,loc+1,string_length(newWords)-loc);
+                    }
+                    if (!useDecision) {
+                        while(ds_queue_size(giveItems) &gt; 0) {
+                            addInventoryItem(ds_queue_dequeue(giveItems));
+                        }
+                    }
+                    textQueued = true;
                 }
-                textQueued = true;
             }
+            if (destroyOnActive) {instance_destroy();}
         }
+        if (destroyOnContact) {instance_destroy();}
     }
-    if (destroyOnContact) {instance_destroy();}
 }
 
 </string>

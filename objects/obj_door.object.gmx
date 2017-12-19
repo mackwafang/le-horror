@@ -56,38 +56,31 @@ unlockString = "";
             <kind>1</kind>
             <string>depth = -y;
 if (!pauseState &amp;&amp; instance_exists(obj_kinetic)) {
-    if (collision_rectangle(x,y,x+15,y+32,obj_kinetic,false,false)) {
-        if (!locked) {
-            //if ((obj_kinetic.y &gt;= y &amp;&amp; obj_kinetic.sprite_index == spr_player_up) || (obj_kinetic.y &lt;= y &amp;&amp; obj_kinetic.sprite_index == spr_player_down)) {
-                isOpen = true;
-                if (keyboard_check_pressed(ord("Z"))) {
-                    if (findInventoryItem(requiredItem)) {
-                        locked = true;
-                        var int = instance_create(obj_player.x,obj_player.y,obj_interactable);
-                        int.words = "You locked the door";
-                        int.activeOnContact = true;
-                        int.destroyOnContact = true;
-                        int.requiredDir = obj_player.facing;
-                    }
+    if (collision_rectangle(x,y,x+15,y+32,obj_player,false,false)) {
+        if (!locked) {isOpen = true;}
+        if (keyboard_check_pressed(ord("Z"))) {
+            var int = instance_create(obj_player.x,obj_player.y,obj_interactable);
+            int.activeOnContact = true;
+            int.destroyOnContact = true;
+            int.requiredDir = obj_player.facing;
+            if (!locked) {
+                if (findInventoryItem(requiredItem)) {
+                    locked = true;
+                    int.words = "You locked the door";
                 }
-            //}
-        }
-        else {
-            if (keyboard_check_pressed(ord("Z"))) {
+            }
+            else {
                 if (findInventoryItem(requiredItem)) {
                     locked = false;
-                    var int = instance_create(obj_player.x,obj_player.y,obj_interactable);
-                    int.words = "You unlocked the door";
-                    int.activeOnContact = true;
-                    int.destroyOnContact = true;
-                    int.requiredDir = obj_player.facing;
+                    if (string_length(unlockString) &gt; 0) {
+                        int.words = unlockString;
+                    }
+                    else {
+                        int.words = "You unlocked the door";
+                    }
                 }
                 else {
-                    var int = instance_create(obj_player.x,obj_player.y,obj_interactable);
                     int.words = lockedString;
-                    int.activeOnContact = true;
-                    int.destroyOnContact = true;
-                    int.requiredDir = obj_player.facing;
                 }
             }
         }
@@ -138,7 +131,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_part(spr_door,0,0,0,16-openned,32,x+openned,y);
+            <string>draw_sprite_part(sprite_index,0,0,0,16-openned,32,x+openned,y);
 if (locked) {
     draw_sprite(spr_locked_icon,1,x+8,y+16);
 }
