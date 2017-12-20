@@ -59,6 +59,7 @@
     <sprite>sprites\spr_inventory_font</sprite>
     <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_light_icon</sprite>
+    <sprite>sprites\spr_double_door</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_wall_tiles</background>
@@ -87,6 +88,7 @@
     <object>objects\obj_nonSolid</object>
     <object>objects\obj_door</object>
     <object>objects\obj_door_left</object>
+    <object>objects\obj_double_door</object>
     <object>objects\obj_moveRooms</object>
     <object>objects\obj_interactable</object>
     <object>objects\obj_item</object>

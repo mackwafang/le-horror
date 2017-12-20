@@ -68,8 +68,8 @@ useDecision = false;
                 if (!textQueued) {
                     var newWords = words;
                     while (string_length(newWords) &gt; 0) {
-                        var loc = autoStringCutLocation(newWords,120);
-                        ds_queue_enqueue(dialogQueue,autoStringCut(newWords,120));
+                        var loc = autoStringCutLocation(newWords,130);
+                        ds_queue_enqueue(dialogQueue,autoStringCut(newWords,130));
                         newWords = string_copy(newWords,loc+1,string_length(newWords)-loc);
                     }
                     if (!useDecision) {

@@ -35,11 +35,11 @@ globalvar pauseState;
 pauseState = false;
 /**************** LIGHTS ****************/
 globalvar drawLight;
-drawLight = true;
+drawLight = false;
 /**************** SURFACE ****************/
 global.surface = surface_create(room_width,room_height);
 globalvar drawSurface, darknessLevel;
-drawSurface = true;
+drawSurface = false;
 darknessLevel = 0.95;
 /**************** INVENTORY ****************/
 globalvar inventorySize, inventory, inventoryPage, accessInventory;
@@ -181,11 +181,8 @@ if (instance_exists(obj_player)) {
 }
 /**************** INVENTORY ****************/
 if (keyboard_check_pressed(ord("C"))) {
-    if(!pauseState) {
-        accessInventory = true;
-    }
-    else {
-        accessInvetory = false;
+    if (!displayDialog) {
+        accessInventory = !accessInventory;
     }
 }
 // TODO: CLEAN THIS MESS
